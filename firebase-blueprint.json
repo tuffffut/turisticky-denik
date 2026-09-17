@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Route": {
+      "title": "Route",
+      "description": "Záznam horské túry v turistickém deníku",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 50000 },
+        "date": { "type": "string", "maxLength": 30 },
+        "visitedYear": { "type": "number" },
+        "region": { "type": "string", "maxLength": 100 },
+        "country": { "type": "string", "maxLength": 100 },
+        "mountainRange": { "type": "string", "maxLength": 100 },
+        "distanceKm": { "type": "number" },
+        "elevationGainM": { "type": "number" },
+        "elevationLossM": { "type": "number" },
+        "highestPointM": { "type": "number" },
+        "lowestPointM": { "type": "number" },
+        "durationMinutes": { "type": "number" },
+        "rating": { "type": "number" },
+        "difficulty": { "type": "string", "maxLength": 30 },
+        "routeType": { "type": "string", "maxLength": 30 },
+        "wantToVisitAgain": { "type": "string", "maxLength": 20 },
+        "highlights": { "type": "array" },
+        "companions": { "type": "array" },
+        "weather": { "type": "object" },
+        "season": { "type": "string", "maxLength": 30 },
+        "photos": { "type": "array" },
+        "videos": { "type": "array" },
+        "startLocation": { "type": "object" },
+        "endLocation": { "type": "object" },
+        "gpxData": { "type": "object" },
+        "tags": { "type": "array" },
+        "notesPrivate": { "type": "string", "maxLength": 10000 },
+        "gpxFileName": { "type": "string", "maxLength": 255 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "title", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/routes/{routeId}": {
+      "schema": "Route",
+      "description": "Kolekce soukromých tras konkrétního uživatele"
+    }
+  }
+}

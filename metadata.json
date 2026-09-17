@@ -1,0 +1,6 @@
+{
+  "name": "Horský Deník - Turistické Trasy",
+  "description": "Profesionální osobní deník a evidence turistických tras s GPX importem, interaktivní topografickou mapou, vizuálním hledáním podle fotek a API.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
